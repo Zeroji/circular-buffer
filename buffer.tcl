@@ -20,11 +20,18 @@ foreach arg $argv {
             }
         } CL**R {
             incr rindx [expr $windx-$rindx]
+        } OVERWRITE {
+            set OW yes
         } default {
             puts stderr "$windx $rindx $size"
             if {$windx-$rindx-$size>=0} {
-                exit 2
-                break
+                if {$OW == "no"} {
+                    exit 2
+                    break
+                }
+                # if buffer is full and overwritten
+                # read pointer changes to next cell
+                incr rindx
             }
             exec ./write.sh $windx $arg
             incr windx
