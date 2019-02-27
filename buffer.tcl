@@ -18,6 +18,8 @@ foreach arg $argv {
                 exit 1
                 break
             }
+        } CL**R {
+            incr rindx [expr $windx-$rindx]
         } default {
             puts stderr "$windx $rindx $size"
             if {$windx-$rindx-$size>=0} {
