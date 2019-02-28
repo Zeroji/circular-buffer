@@ -16,7 +16,9 @@ that less than half of it has been copied from StackOverflow. This project is li
 
 ## Usage
 
-TBD
+`tclsh` (a TCL interpreter) and `bash` must be installed.
+
+Make a clean clone, and run `./test.sh ./8wrap.sh`
 
 ## Links
 
